@@ -29,6 +29,19 @@ document.addEventListener("deviceready", function(){
 		$('#derecha').swiperight(function(){
 			navigator.notification.alert("deslizó a la derecha",function(){},"practica 1","Aceptar");
 		});
+		$('#izquierda').swipeleft(function){
+			navigator.notification.confirm('¿que desea aser?',function(opcion){
+				switch(opcion){
+					case 1:
+						navigator.notification.beep(1)
+						break;
+						case 2:
+							navigator.notification.vibrate(500)
+							break;
+				}
+		};"practica1","beep,vibrar,cancelar");//function confirm
+		});//function swipe
+		
 	});
 },false);
 });
